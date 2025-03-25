@@ -1,0 +1,80 @@
+.pay-container {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  padding: 20px;
+  border-radius: 10px;
+  animation: fadeIn 1s ease-in-out;
+  box-shadow: 0 4px 15px rgba(0, 255, 204, 0.2);
+  font-family:'David';
+}
+
+.pay-container h1 {
+  text-align: right;
+  color: #00ffcc;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.user-details, .price-details {
+  text-align: right;
+  background-color: #2b2b2b;
+  color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  width: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-details h2, .price-details h2 {
+  color: #00ffcc;
+  text-align: right;
+
+}
+
+button {
+  background-color: #00ffcc;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-size: 1.1rem;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 255, 204, 0.6);
+}
+
+.price-details h1 {
+  color: #ffcc00;
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 10px;
+}
+/* pay.component.css */
+.swal2-popup {
+  background-color: #1a1a1a; /* רקע שחור */
+  color: #ffffff; /* טקסט לבן */
+  border: 2px solid #00ffcc; /* מסגרת זוהרת */
+}
+
+.swal2-title {
+  color: #00ffcc; /* כותרת זוהרת */
+}
+
+.swal2-content {
+  color: #ffffff; /* תוכן לבן */
+}
+
+.swal2-confirm-button {
+  background-color: #00ffcc !important; /* כפתור זוהר */
+  color: #000000 !important;
+}

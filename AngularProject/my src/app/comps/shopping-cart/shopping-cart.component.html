@@ -1,0 +1,25 @@
+
+
+<button class="robot-option" (click)="finish()">אישור <i class="fa-regular fa-check-circle"></i></button>
+<div class="shopping-cart">
+   <h2><i class="fa-solid fa-shopping-cart"></i>   סל קניות </h2>
+
+    <ul>
+        @for(r of shoppingCart;track r){
+      <li >
+        <div class="robot-cards">
+          @for(f of r.connections;track f){
+          
+            <div class="robot-option" >{{f.name}}</div>
+          }
+        </div>
+        <br>
+        <br>
+        <span class="robot-name">{{ r.name }}</span>
+        <span class="robot-color">{{ r.color }}</span>
+        <button (click)="removeRobot(r.id)" class="delete-button">מחיקה <i class="fas fa-trash"></i>
+        </button>
+      </li>}
+    </ul>
+  </div>
+  

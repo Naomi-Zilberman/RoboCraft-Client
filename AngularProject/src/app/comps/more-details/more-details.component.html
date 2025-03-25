@@ -1,0 +1,47 @@
+<div class="robot-page">
+  <!-- צד שמאל - פרטי הרובוט ותיאור -->
+  <div class="robot-info">
+    <h1 class="robot-name">{{ r?.name }}</h1>
+    <div class="robot-description">
+      <p>{{ r?.description }}</p>
+      <h2>מחיר: {{ r?.price }}</h2>
+      <h2> <button class="myColor" style="background-color: {{r?.color}};height: 24px;
+        border-radius: 5px;
+        border-color: white;
+        border-style: solid;
+        padding: 8px 12px;
+        transition: transform 0.3s, box-shadow 0.3s"></button> :צבע </h2>
+      <h2> {{ r?.madeIn }}:ארץ ייצור</h2>
+      <h2> {{ r?.material }}:חומר</h2>
+    </div>
+    
+    @if(r) {
+      <div class="robot-footer">
+        <button class="robot-option" (click)="shoppingCart(r)">
+          <i class="fa-solid fa-plus"></i> הוסף לסל
+        </button>
+      </div>
+    }
+  </div>
+  
+  <!-- צד ימין - תמונה וכרטיסי התכונות -->
+  <div class="robot-image-container">
+    <img [src]="r?.image" alt="{{ r?.name }}" class="robot-image">
+    <div class="robot-capabilities">
+
+      <div class="robot-cards">
+        @for(f of allF; track f) {
+          <div class="robot-card" [ngClass]="{'clicked': allc.includes(f)}" (click)="chose(f); updateFeatureInfo(f)">
+            <h1><i [ngClass]="f.icon" style="color: white;"></i></h1>
+            <div class="price-details"> {{ f.price | currency }}</div>
+          </div>
+        }
+      </div>    
+        
+      <div class="feature-details">
+        <h2><i class="fa-solid fa-stream"></i></h2>
+        <p id="featureInfo">{{ selectedFeatureInfo }}</p> <!-- עדכון כאן -->
+      </div>
+    </div>
+  </div>
+</div>

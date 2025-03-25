@@ -1,0 +1,14 @@
+/* styles.css */
+body {
+  font-family:'David';
+  background-color:black;
+}
+
+/* component.css */
+.my-component p {
+  font-family: 'Heebo'; /* גופן ספציפי לרכיב */
+}
+
+.another-component h2 {
+  font-family: inherit; /* חוזר לגופן הגלובלי (Alef) */
+}

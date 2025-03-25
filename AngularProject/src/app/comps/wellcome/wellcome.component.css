@@ -1,0 +1,124 @@
+.welcome-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black; /* רקע שחור */
+    /* אם אתה רוצה להסיר את האנימציה לחלוטין, מחק את השורה הבאה: */
+    /* animation: colorChange 10s linear infinite alternate;  */
+  }
+  
+  /* אם הסרת את האנימציה, מחק גם את ה-keyframes */
+  /* @keyframes colorChange {
+      0% {
+          background: linear-gradient(to right, #e0eafc, #cfdef3);
+      }
+      50% {
+          background: linear-gradient(to right, #f0efeb, #c7d2e2);
+      }
+      100% {
+          background: linear-gradient(to right, #e0eafc, #cfdef3);
+      }
+  } */
+  
+  .robot-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    animation: fadeInOut 5s ease-in-out, pulse 3s linear infinite;
+    z-index: 2; /* מעל הרקע */
+  }
+  
+  @keyframes pulse {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.05); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+  }
+  
+  .stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* מעל הרקע */
+  }
+  
+  .star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background-color: white;
+    border-radius: 50%;
+    animation: twinkle 2s linear infinite, starsFall 10s linear infinite;
+    left: calc(var(--x) * 100%);
+    top: calc(var(--y) * 100%);
+    opacity: 0;
+    animation-delay: var(--delay);
+    box-shadow: 0 0 5px white;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* שכבת צבע שקופה - שחור */
+    z-index: 3; /* מעל הכוכבים והתמונה */
+  }
+  
+  @keyframes fadeInOut {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  
+  @keyframes twinkle {
+    0% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.5); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.5; }
+  }
+  
+  @keyframes starsFall {
+    0% { transform: translateY(-20vh); opacity: 0; }
+    70% { opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; }
+  }
+ /* ... (שאר ה-CSS) */
+
+#welcome-text {
+    font-family:'David';
+    position: absolute;
+    bottom: -50px; /* מתחיל מתחת למסך */
+    left: 50%;
+    transform: translateX(-50%); /* מרכוז אופקי */
+    font-size: 2em;
+    color: white;
+    white-space: nowrap; /* מונע גלישת טקסט */
+    animation: fadeInUp 2s ease-in-out forwards; /* אנימציה חדשה */
+    z-index: 4;
+    opacity: 0; /* מתחיל משקוף */
+}
+
+@keyframes fadeInUp {
+    0% {
+        transform: translateX(-50%) translateY(50px); /* מתחיל מתחת למסך */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(-50%) translateY(0); /* מגיע למקום */
+        opacity: 1;
+    }
+}
+

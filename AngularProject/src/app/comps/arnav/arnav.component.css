@@ -1,0 +1,79 @@
+.navbar {
+    background-color: #000;
+    border-bottom: 2px solid #00ff2f;
+}
+
+.shura {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    background-color: #000;
+}
+
+.robot-option {
+    font-family:'David';
+    position: relative; /* הכנת המיקום עבור האלמנט */
+    color:  #00ffbb;
+    border: none; /* הסרת הגבול */
+    background-color: transparent; /* רקע שקוף */
+    padding: 10px 20px;
+    cursor: pointer;
+    text-decoration: none; /* להסיר קו תחתון */
+    font-weight: bold; /* להדגיש את הטקסט */
+    overflow: hidden; /* למנוע גלישה */
+}
+
+.robot-option::after {
+    content: ''; /* יצירת אלמנט חדש */
+    position: absolute;
+    left: 50%; /* מיקום האמצע */
+    bottom: 0; /* מיקום בתחתית */
+    width: 0; /* התחלה עם רוחב אפס */
+    height: 2px; /* גובה הקו */
+    background-color: #b7fce9; /* צבע הקו */
+    transition: width 0.3s ease, left 0.3s ease; /* מעבר חלק */
+}
+
+.robot-option:hover::after {
+    width: 100%; /* הרחבת הקו למלא את האורך */
+    left: 0; /* מיקום מחדש לאמצע */
+}
+
+.active-link {
+    font-family:'David';
+    color: #00ff4c;
+    font-weight: bold; /* להדגיש את הלינק הפעיל */
+}
+
+/* הוספת עיצוב נוסף */
+.robot-option:focus {
+    outline: none; /* להסיר את קו התיחום */
+}
+
+.shura > .robot-option {
+    margin: 0 5px; /* להוסיף רווח בין הלינקים */
+}
+.goB {
+    background-color: #000;
+    border: none;
+    border-radius: 25px;
+    padding: 8px;
+    width: auto;
+    text-align: center;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  .fa-regular{
+    transform: scale(1.5);
+    color: #00ffbb;
+}
+  .fa-regular:hover{
+    transform: scale(2);
+    color: #ffffff;
+  }
+    .fa-regular:active{
+        transform: scale(1.5);
+        color: #00ffbb;
+    }

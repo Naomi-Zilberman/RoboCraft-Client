@@ -1,0 +1,43 @@
+<div class="robot-page">
+  <!-- צד שמאל - פרטי הרובוט ותיאור -->
+  <div class="robot-info">
+    <h1 class="robot-name">{{ r?.name }}</h1>
+    <div class="robot-description">
+      <h3>קצת עלי:</h3>
+      <p>{{ r?.description }}</p>
+      <h2>מחיר: {{ r?.price }}</h2>
+      <h2>צבע: {{ r?.color }}</h2>
+      <h2>ארץ ייצור: {{ r?.madeIn }}</h2>
+      <h2>חומר: {{ r?.material }}</h2>
+    </div>
+    
+   
+    
+    @if(r) {
+      <div class="robot-footer">
+        <button class="robot-option" (click)="shoppingCart(r)">
+          <i class="fa-solid fa-plus"></i> הוסף לסל
+        </button>
+      </div>
+    }
+  </div>
+  
+  <!-- צד ימין - תמונה וכרטיסי התכונות -->
+  <div class="robot-image-container">
+    <img [src]="r?.image" alt="{{ r?.name }}" class="robot-image">
+    <div class="robot-capabilities">
+      <h3>כרטיסי היכולות:</h3>
+      <div class="robot-cards">
+        @for(f of allF;track f) {
+          <div class="robot-card" (click)="chose(f)">
+
+            <h4>{{ f.name }}</h4>
+            <p class="description">{{ f.description }}</p>
+            <p class="price">{{ f.price }}</p>
+           
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

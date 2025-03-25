@@ -1,0 +1,64 @@
+/* עיצוב הכללי של העמוד */
+/* עיצוב רקע לדף */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f5d8d3, #fdfdfd , #fdfdfd , #c1d6f3);
+  text-align: center;
+  /* padding: 20px; */
+}
+
+/* כותרת */
+h1 {
+  font-size: 3rem;
+  color: #4960f4;
+  margin-bottom: 10px;
+}
+
+/* תיאור */
+p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* כפתור ממורכז */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.navigate-button {
+  padding: 15px 30px;
+  background-color: #e85c8f; /* צבע מותאם לחנות בגדי תינוקות */
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.navigate-button:hover {
+  background-color: #d14747;
+  transform: scale(1.05); /* הגדלת הכפתור כשעושים hover */
+}
+
+/* אלמנט הדרך */
+.road {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
+.road-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}

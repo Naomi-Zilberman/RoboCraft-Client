@@ -1,0 +1,109 @@
+/* הגדרת עיצוב כללי לדף */
+.robot-page {
+  display: flex;
+  background-color: black;
+  padding: 20px;
+  border-radius: 10px;
+  animation: fadeIn 1s ease-in-out;
+  box-shadow: 0 4px 15px rgba(0, 255, 204, 0.2);
+  font-family:'David';
+}
+
+/* צד שמאל - פרטי הרובוט */
+.robot-info {
+  width: 40%; /* רוחב של צד פרטי הרובוט */
+  color: #ffffff;
+}
+
+/* צד ימין - תמונה וכרטיסי התכונות */
+.robot-image-container {
+  width: 60%; /* רוחב של צד התמונה */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* תמונה */
+.robot-image {
+  width: 50%; /* שינוי רוחב התמונה */
+  height: auto;
+  border-radius: 10px;
+}
+
+/* כרטיסי תכונות */
+.robot-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* עיצוב כרטיסי רובוט */
+.robot-card {
+  background-color: black;
+  border: 2px solid #4c7a71;
+  border-radius: 15px;
+  padding: 15px;
+  width: 80px; /* רוחב הכרטיס */
+  height: 80px; /* גובה הכרטיס */
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* אפקט ריחוף על כרטיס רובוט */
+.robot-card:hover {
+  transform: scale(1.05);
+  /* box-shadow: 0 4px 20px rgba(0, 255, 204, 0.6); */
+}
+
+/* פרטי הפיצ'ר */
+.feature-details {
+  margin-top: 20px;
+  background-color: #2b2b2b;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+/* כפתור הוספה לסל */
+.robot-option {
+  background-color: #00ffcc;
+  border: none;
+  border-radius: 25px;
+  padding: 10px;
+  width: 180px;
+  text-align: center;
+  font-weight: bold;
+  color: #1e1e1e;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-size: 1.1rem;
+}
+
+.robot-option:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 255, 204, 0.6);
+}
+
+/* אפקטים אנימציה */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.robot-card.clicked {
+  border: 2px solid #eee8ea; /* מסגרת בהירה יותר כאשר הכרטיס נבחר */
+}
+.price-details {
+  color: #ffcc00;
+  text-align: center;
+  margin-top: 5px;
+  font-size:xx-small;
+}

@@ -1,0 +1,241 @@
+/* הגדרת עיצוב כללי לדף */
+.robot-page {
+  display: flex;
+  background-color: black;
+  padding: 20px;
+  border-radius: 10px;
+  animation: fadeIn 1s ease-in-out;
+  box-shadow: 0 4px 15px rgba(0, 255, 204, 0.2);
+  font-family:'David';
+}
+
+/* צד שמאל - פרטי הרובוט */
+.robot-info {
+  width: 40%; /* רוחב של צד פרטי הרובוט */
+  color: #ffffff;
+}
+
+/* צד ימין - תמונה וכרטיסי התכונות */
+.robot-image-container {
+  width: 60%; /* רוחב של צד התמונה */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* תמונה */
+.robot-image {
+  width: 50%; /* שינוי רוחב התמונה */
+  height: auto;
+  border-radius: 10px;
+}
+
+/* כרטיסי תכונות */
+.robot-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* עיצוב כרטיסי רובוט */
+.robot-card {
+  background-color: black;
+  border: 2px solid #4c7a71;
+  border-radius: 15px;
+  padding: 15px;
+  width: 80px; /* רוחב הכרטיס */
+  height: 80px; /* גובה הכרטיס */
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* אפקט ריחוף על כרטיס רובוט */
+.robot-card:hover {
+  transform: scale(1.05);
+  /* box-shadow: 0 4px 20px rgba(0, 255, 204, 0.6); */
+}
+
+/* פרטי הפיצ'ר */
+.feature-details {
+  margin-top: 20px;
+  background-color: #2b2b2b;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+/* כפתור הוספה לסל */
+.robot-option {
+  background-color: #00ffcc;
+  border: none;
+  border-radius: 25px;
+  padding: 10px;
+  width: 180px;
+  text-align: center;
+  font-weight: bold;
+  color: #1e1e1e;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-size: 1.1rem;
+}
+
+.robot-option:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 255, 204, 0.6);
+}
+
+/* אפקטים אנימציה */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.robot-card.clicked {
+  border: 2px solid #eee8ea; /* מסגרת בהירה יותר כאשר הכרטיס נבחר */
+}
+.price-details {
+  color: #ffcc00;
+  text-align: center;
+  margin-top: 5px;
+  font-size:xx-small;
+}
+body {
+    font-family: Yehuda CLM;
+    background-color: black;
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+}
+
+/* עיצוב כללי לפסקאות */
+
+
+/* כותרת */
+h3 {
+    text-align: center;
+    color: #00ffcc;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    animation: slideIn 1s forwards;
+}
+
+/* תיאור כללי */
+.intro-text {
+    color: #ffffff;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* כפתור קריאה לפעולה */
+.button {
+    display: inline-block;
+    background-color: #00ffcc;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-top: 20px;
+}
+
+.button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 255, 204, 0.6);
+}
+
+/* אפקטים אנימציה */
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/* login.component.css */
+body{
+    background-color: #000000;
+  }
+  .login-container {
+    display: flex;
+    justify-content: center; /* מרכוז אופקי */
+    align-items: center; /* מרכוז אנכי */
+    min-height: 100vh; /* גובה מינימלי של המסך */
+    background-size: cover; /* כיסוי מלא של הרקע */
+    background-position: center; /* מרכוז התמונה */
+    font-family: 'David'; /* גופן עברית */
+  }
+  
+  .login-box {
+    background-color: rgba(0, 0, 0, 0.8); /* רקע שחור שקוף */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.5); /* צל זוהר */
+    width: 400px; /* רוחב קבוע */
+    text-align: center;
+  }
+  
+  .login-title {
+    color: #00ffcc; /* כותרת בצבע זוהר */
+    margin-bottom: 20px;
+  }
+  
+  .login-description {
+    color: #ffffff;
+    margin-bottom: 30px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-control {
+    background-color: rgba(255, 255, 255, 0.1); /* רקע שקוף */
+    border: 1px solid #00ffcc; /* מסגרת זוהרת */
+    border-radius: 10px;
+    padding: 15px;
+    color: #ffffff; /* טקסט לבן */
+    width: calc(100% - 30px); /* רוחב מלא עם ריווח */
+    transition: border-color 0.3s ease; /* מעבר חלק של המסגרת */
+  }
+  
+  .form-control:focus {
+    border-color: #00cc99; /* מסגרת זוהרת יותר בעת מיקוד */
+    outline: none; /* הסרת קו המיקוד המוגדר על ידי הדפדפן */
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.3); /* צל זוהר בעת מיקוד */
+  }
+  
+  .error-message {
+    color: #ff6b6b; /* צבע אדום לשגיאות */
+    font-size: 0.8em;
+    margin-top: 5px;
+  }
+  
+  .login-button {
+    background-color: #00ffcc; /* כפתור זוהר */
+    color: #000000;
+    border: none;
+    border-radius: 25px;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .login-button:hover {
+    background-color: #00cc99; /* כפתור זוהר יותר בעת ריחוף */
+    transform: scale(1.05);
+  }

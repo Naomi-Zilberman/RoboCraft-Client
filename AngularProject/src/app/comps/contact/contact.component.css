@@ -1,0 +1,74 @@
+body {
+    font-family:'David';
+    background-color: black;
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+}
+
+/* עיצוב כללי לפסקאות */
+p {
+    font-family:'David';
+    text-align: right;
+    background-color: rgba(0, 255, 204, 0.1); /* אקווה עם שקיפות */
+    border: 2px solid #00ffcc; /* גבול אקווה */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 15px rgba(0, 255, 204, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* אפקט ריחוף על הפסקה */
+p:hover {
+    /* transform: scale(1.02); */
+    box-shadow: 0 6px 20px rgba(0, 255, 204, 0.5);
+}
+
+/* כותרת */
+h1 {
+    text-align: center;
+    color: #00ffcc;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    animation: slideIn 1s forwards;
+}
+
+/* תיאור כללי */
+.intro-text {
+    color: #ffffff;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* כפתור קריאה לפעולה */
+.button {
+    display: inline-block;
+    background-color: #00ffcc;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-top: 20px;
+}
+
+.button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 255, 204, 0.6);
+}
+
+/* אפקטים אנימציה */
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

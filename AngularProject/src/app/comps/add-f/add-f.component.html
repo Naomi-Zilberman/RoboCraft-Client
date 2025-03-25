@@ -1,0 +1,66 @@
+<h3>...כמה טוב שבחרת לשדרג את הרובוט שברשותך ולהוסיף לו יכולות חדשות שיקלו על החיים</h3>
+<h3>!אנו בטוחים שתצא הכי מרוצה שרק אפשר. ונעשה הכל למען מטרה זו</h3>
+<h3>:כדי להתאים לך את התכונות עבור הרובוט שברשותך עליך להזין את הדגם וכן את קוד המוצר</h3>
+
+    <form class="was-validated" #myForm="ngForm" (ngSubmit)="ok()">
+        <div class="form-group">
+          <input type="text" class="form-control" id="name" placeholder="דגם הרובוט" name="name" required
+                 #validName="ngModel" [(ngModel)]="newR.name" >
+          <div *ngIf="(validName.invalid && (validName.touched || validName.dirty))" class="error-message">
+            <p *ngIf="validName.errors?.['required']">שדה חובה</p>
+            <p *ngIf="validName.errors?.['pattern']">שם לא תקין</p>
+          </div>
+        </div>
+
+     <div class="form-group">
+        <input type="number" class="form-control" id="id" placeholder="קוד הרובוט" name="id" required
+               #validIdd="ngModel" [(ngModel)]="newR.id" >
+        <div *ngIf="(validIdd.invalid && (validIdd.touched || validIdd.dirty))" class="error-message">
+          <p *ngIf="validIdd.errors?.['required']">שדה חובה</p>
+          <p *ngIf="validIdd.errors?.['pattern']">קוד לא תקין</p>
+        </div>
+      </div>
+
+
+    <button type="submit" [disabled]="!myForm.valid" class="register-button">לאישור</button>
+  </form>
+  <!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+  <div class="robot-page">
+    <!-- צד שמאל - פרטי הרובוט ותיאור -->
+    <div class="robot-info">
+      <h1 class="robot-name">{{ r?.name }}</h1>
+      <div class="robot-description">
+        <p>{{ r?.description }}</p>
+      </div>
+      
+      @if(r) {
+        <div class="robot-footer">
+          <button class="robot-option" (click)="shoppingCart(r)">
+            <i class="fa-solid fa-plus"></i> לסיום 
+          </button>
+        </div>
+      }
+    </div>
+    
+    <!-- צד ימין - תמונה וכרטיסי התכונות -->
+    <div class="robot-image-container">
+      <img [src]="r?.image" alt="{{ r?.name }}" class="robot-image">
+      <div class="robot-capabilities">
+  
+        <div class="robot-cards">
+          @for(f of allF; track f) {
+            <div class="robot-card" [ngClass]="{'clicked': allc.includes(f)}" (click)="chose(f); updateFeatureInfo(f)">
+              <h1><i [ngClass]="f.icon" style="color: white;"></i></h1>
+              <div class="price-details"> {{ f.price | currency }}</div>
+            </div>
+          }
+        </div>    
+          
+        <div class="feature-details">
+          <h2><i class="fa-solid fa-stream"></i></h2>
+          <p id="featureInfo">{{ selectedFeatureInfo }}</p> <!-- עדכון כאן -->
+        </div>
+      </div>
+    </div>
+  </div>
+  

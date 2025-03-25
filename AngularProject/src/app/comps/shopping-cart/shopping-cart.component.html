@@ -1,0 +1,38 @@
+<div class="shopping-cart">
+  <h2>
+    <button class="robot-option" (click)="finish()" style="float: left; margin-right: 10px;"> 
+      <i class="fa-regular fa-credit-card"></i> למעבר לתשלום 
+    </button>
+    <span>סל הקניות שלך</span>
+  </h2>
+  <ul>
+      @for(r of shoppingCart;track r){
+     <li>
+       <span class="robot-name">{{ r.name }}</span>
+       <span class="robot-color"><button class="myColor" style="background-color: {{r?.color}};height: 24px;
+       border-radius: 5px;
+       border-color: white;
+       border-style: solid;
+       padding: 8px 12px;
+       transition: transform 0.3s, box-shadow 0.3s"></button> :הצבע שלי </span>
+      <br>
+      <div class="price-details">מחיר: {{ r.price | currency }} </div>
+      <br>
+       <div class="robot-container">
+         <div class="robot-card">
+           <img class="img" [src]='r.image'>
+         </div>
+         <div class="features-container">
+           @for(f of r.connections;track f){
+             <div class="feature-item">
+              <br>
+              <h1><i [ngClass]="f.icon" style="color: white;"></i></h1>
+               <h5 class="robot--">{{ f.name }}</h5>
+             </div>}
+           </div>
+       </div>
+       <button (click)="removeRobot(r.id)" class="delete-button" appChangeColor>מחיקה <i class="fas fa-trash"></i>
+       </button>
+     </li>}
+   </ul>
+</div>

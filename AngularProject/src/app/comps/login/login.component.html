@@ -1,0 +1,32 @@
+<div class="login-container">
+  <div class="login-box">
+    <h2 class="login-title">כניסה</h2> 
+    <p class="login-description">התחברו לחשבון הרובוט שלכם.</p> 
+
+    <form class="was-validated" #myForm="ngForm"> <!-- טופס ההתחברות, כולל ולידציה -->
+      <div class="form-group"> 
+        <input type="text" class="form-control" id="name" placeholder="שם" name="name" required
+               #validName="ngModel" [(ngModel)]="newUser.name" pattern="([א-ת]+ [א-ת]{2,7}|[A-Z]{1}[a-z]+)"> 
+        <!-- שדה קלט לשם המשתמש עם בדיקת תבנית בעברית או באנגלית -->
+        <div *ngIf="(validName.invalid && (validName.touched || validName.dirty))" class="error-message">
+          <p *ngIf="validName.errors?.['required']">שדה חובה</p> <!-- הודעה אם השדה ריק -->
+          <p *ngIf="validName.errors?.['pattern']">שם לא תקין</p> <!-- הודעה אם השם אינו עומד בתבנית -->
+        </div>
+      </div>
+
+      <div class="form-group"> 
+        <input type="email" class="form-control" id="email" placeholder="כתובת מייל" name="email" 
+               [(ngModel)]="newUser.email" #validMail="ngModel" pattern="[A-Za-z.0-9]+@(gmail.com|co.il|net)">
+        <!-- שדה קלט למייל עם בדיקת תבנית של Gmail, co.il או net -->
+        <div *ngIf="(validMail.invalid && (validMail.touched || validMail.dirty))" class="error-message">
+          <p *ngIf="validMail.errors?.['required']">שדה חובה</p> <!-- הודעה אם השדה ריק -->
+          <p *ngIf="validMail.errors?.['pattern']">מייל לא תקין</p> <!-- הודעה אם המייל אינו עומד בתבנית -->
+        </div>
+      </div>
+
+      <button type="submit" class="login-button" (click)="login()" [disabled]="!myForm.valid">אישור</button>
+    </form>
+
+    <router-outlet></router-outlet> 
+  </div>
+</div>

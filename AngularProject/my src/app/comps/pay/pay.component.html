@@ -1,0 +1,23 @@
+<div class="pay-container">
+    <h1>תשלום</h1>
+  
+    <div class="user-details" >
+      <h2>פרטי המשתמש</h2>
+      <p><strong>שם:</strong> {{ user.name }}</p>
+      <p><strong>טלפון:</strong> {{ user.phone }}</p>
+      <p><strong>אימייל:</strong> {{ user.email }}</p>
+      <p><strong>תאריך לידה:</strong> {{ user.dateBirth }}</p>
+    
+    </div>
+  
+    <div class="price-details">
+      <h2>פרטי תשלום</h2>
+      <p><strong>סכום כולל:</strong> {{ before | currency }}</p>
+      <p *ngIf="discount > 0"><strong>הנחת יום הולדת:</strong> -{{ discount | currency }}</p>
+      <p><strong>סכום לאחר הנחה:</strong> {{ total | currency }}</p>
+      <h1>{{total | currency}}</h1>
+    </div>
+  
+    <button (click)="ok1()" >אשר תשלום</button>
+  </div>
+  

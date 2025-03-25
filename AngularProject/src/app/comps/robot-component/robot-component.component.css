@@ -1,0 +1,552 @@
+
+
+.robot-gallery {
+
+margin-top: 0.2%;
+
+display: flex;
+
+flex-direction: column;
+
+align-items: center;
+
+background-color: black;
+
+padding: 20px;
+
+/* border-radius: 10px; */
+
+animation: fadeIn 1s ease-in-out;
+
+box-shadow: 0 4px 15px rgba(0, 255, 204, 0.2);
+
+font-family:'David';
+
+}
+
+
+
+/* כותרת הגלריה */
+
+.gallery-title {
+
+font-family:'David';
+
+font-size: 2.5rem;
+
+color: #00ffcc;
+
+margin-bottom: 20px;
+
+animation: slideIn 1s forwards;
+
+text-align: center;
+
+font-weight: bold;
+
+}
+
+
+
+/* תיאור כללי לפני כרטיסים */
+
+.intro-text {
+
+color: #ffffff;
+
+font-size: 1.5rem;
+
+text-align: center;
+
+margin-top: 30px;
+
+font-weight: 600;
+
+font-family:'David';
+
+}
+
+
+
+/* עיצוב סינונים */
+
+.filters {
+
+display: flex;
+
+justify-content: center;
+
+gap: 15px;
+
+margin-bottom: 20px;
+
+flex-wrap: wrap;
+
+width: 100%;
+
+}
+
+
+
+/* עיצוב כפתורי הסינון */
+
+.robot-option {
+
+background-color: white;
+
+border: none;
+
+border-radius: 25px;
+
+padding: 10px;
+
+width: 180px;
+
+text-align: center;
+
+font-weight: bold;
+
+color: #1e1e1e;
+
+cursor: pointer;
+
+transition: transform 0.3s, box-shadow 0.3s;
+
+font-size: 1.1rem;
+
+font-family:'David';
+
+}
+
+
+
+.robot-option:hover {
+
+transform: scale(1.05);
+
+box-shadow: 0 4px 20px rgba(0, 255, 204, 0.6);
+
+}
+
+
+
+/* הגדרת עיצוב כרטיסי רובוט */
+
+.robot-cards {
+
+display: flex;
+
+flex-wrap: wrap;
+
+justify-content: center;
+
+gap: 20px;
+
+}
+
+
+
+.robot-card {
+
+background-color: black;
+
+border: 2px solid #00ffcc;
+
+border-radius: 15px;
+
+padding: 15px;
+
+width: 180px;
+
+text-align: center;
+
+transition: transform 0.3s, box-shadow 0.3s;
+
+animation: popIn 0.5s forwards;
+
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+
+}
+
+
+
+/* אפקט ריחוף על כרטיס רובוט */
+
+.robot-card:hover {
+
+transform: scale(1.05);
+
+box-shadow: 0 4px 20px rgba(0, 255, 204, 0.6);
+
+}
+
+
+
+/* כותרת ותיאור של הרובוט */
+
+.robot-- {
+
+color: aliceblue;
+
+font-weight: 600;
+
+margin: 10px 0;
+
+font-family:'David';
+
+}
+
+
+
+/* תיאור המחיר */
+
+.robot-card p {
+
+font-size: 1.2rem;
+
+color: #ffcc00;
+
+font-weight: bold;
+
+font-family:'David';
+
+}
+
+
+
+/* התמונה */
+
+.robot-card img {
+
+width: 100%;
+
+height: auto;
+
+border-radius: 15px;
+
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+transition: transform 0.3s ease-in-out;
+
+}
+
+
+
+.robot-card img:hover {
+
+transform: scale(1.1);
+
+}
+
+
+
+/* טקסט תחתון */
+
+.footer-text {
+
+color: #cccccc;
+
+font-size: 2rem;
+
+text-align: center;
+
+margin-top: 30px;
+
+font-weight: 800;
+
+font-family:'David';
+
+}
+
+
+
+
+
+/* אפקטים אנימציה */
+
+@keyframes fadeIn {
+
+from {
+
+opacity: 0;
+
+}
+
+to {
+
+opacity: 1;
+
+}
+
+}
+
+
+
+@keyframes slideIn {
+
+from {
+
+transform: translateY(-50px);
+
+opacity: 0;
+
+}
+
+to {
+
+transform: translateY(0);
+
+opacity: 1;
+
+}
+
+}
+
+
+
+@keyframes popIn {
+
+from {
+
+transform: scale(0.5);
+
+opacity: 0;
+
+}
+
+to {
+
+transform: scale(1);
+
+opacity: 1;
+
+}
+
+}
+
+/* עיצוב עבור תכונות ה-FEATURES */
+
+.features-container {
+
+display: flex;
+
+justify-content: space-between; /* מפזר את הריבועים שווה בשווה */
+
+margin-top: 20px;
+
+margin-bottom: 10px;
+
+width: 100%;
+
+flex-wrap: wrap;
+
+gap: 0px; /* מרווח מאוד קטן בין הריבועים */
+
+}
+
+
+
+.feature-item {
+
+padding: 0; /* צמצום ריפוד */
+
+margin: 0; /* הוספת מרווח אפס אם יש צורך */
+
+
+background-color: #2b2b2b; /* צבע כהה כרקע */
+
+color: #ffffff; /* צבע טקסט בהיר */
+
+/* padding: 8px; צמצום ריפוד כדי שיתפסו פחות מקום */
+
+width: 10%; /* רוחב של כל ריבוע קטן יותר (כ-7% מהרוחב הכולל) */
+
+border-radius: 10px;
+
+text-align: center;
+
+font-size: 1.1rem;
+
+font-weight: bold;
+
+transition: transform 0.3s, box-shadow 0.3s;
+
+}
+
+
+
+.feature-item:hover {
+
+transform: scale(1.05);
+
+box-shadow: 0 4px 15px rgba(27, 107, 91, 0.6);
+
+}
+
+
+
+body {
+
+font-family:'David';
+
+direction: rtl; /* הגדרת כיווניות */
+
+background-color: black;
+
+margin: 0;
+
+padding: 0;
+
+}
+
+
+
+.container {
+
+max-width: 800px;
+
+margin: 0 auto;
+
+padding: 20px;
+
+background-color: black;
+
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+
+
+h1 {
+
+text-align: center;
+
+color: #333;
+
+}
+
+
+
+.row {
+
+display: flex;
+
+justify-content: space-between;
+
+margin-top: 20px;
+
+}
+
+
+
+.column {
+
+flex: 1;
+
+margin: 0 10px;
+
+padding: 20px;
+
+background-color: black;
+
+border-radius: 8px;
+
+box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+
+}
+
+
+
+.column h2 {
+
+color: #666;
+
+}
+
+
+
+p {
+
+color: #777;
+
+line-height: 1.6;
+
+}
+
+.feature-item.clicked {
+
+border: 2px solid #ef0251; /* מסגרת בהירה יותר כאשר הכרטיס נבחר */
+
+}
+
+
+/* ... (שאר ה CSS שלך) */
+
+.show-features-button {
+  background-color: #00ffcc; /* או כל צבע אחר שתרצה */
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px; /* מרווח מתחת לכפתור */
+  transition: background-color 0.3s ease; /* מעבר חלק בצבע הרקע */
+}
+
+.show-features-button:hover {
+  background-color: #00cc99; /* גוון כהה יותר בעת ריחוף */
+}
+
+
+.features-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  border: 2px solid #00ffcc;
+  width: 80%; /* רוחב יחסי */
+  max-width: 600px; /* רוחב מקסימלי */
+  height: auto; /* גובה אוטומטי */
+  max-height: 80%; /* גובה מקסימלי */
+  overflow-y: auto; /* גלילה אנכית אם התוכן ארוך מדי */
+  border-radius: 10px;
+}
+
+.features-box {
+  background-color: #2b2b2b;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row; /* סידור אופקי של התכונות */
+  flex-wrap: wrap; /* אפשרות לשבירת שורות */
+  justify-content: center; /* מרכוז התכונות */
+  gap: 10px; /* מרווח בין התכונות */
+}
+
+.feature-item {
+  margin: 5px;
+  padding: 10px;
+  border: 2px solid #4c7a71;
+  border-radius: 5px;
+  background-color: #333;
+  width: auto; /* רוחב אוטומטי */
+  text-align: center; /* מרכוז טקסט */
+  transition: border-color 0.3s ease; /* מעבר חלק בצבע המסגרת */
+
+}
+
+.close-features-button {
+  margin-top: 20px;
+  background-color: #00ffcc;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.feature-item.selected {
+  border: 2px solid #eee8ea;
+}

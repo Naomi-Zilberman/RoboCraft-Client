@@ -1,0 +1,24 @@
+<div class="register-container">
+  <div class="register-box">
+    <h2 class="register-title">הרשמה לרובוטים</h2>
+    <p class="register-description">הצטרפו למהפכת הרובוטים! מלאו את הפרטים וקבלו גישה לעולם שלם של אפשרויות.</p>
+
+    <form class="was-validated" #myForm="ngForm" (ngSubmit)="ok()">
+      <div class="form-group">
+        <input type="string" class="form-control" id="phone" placeholder="מספר טלפון" name="phone" 
+               [(ngModel)]="newUser.phone" #validPhone="ngModel" required pattern="^05[0-9]{8}$">
+        <div *ngIf="(validPhone.invalid && (validPhone.touched || validPhone.dirty))" class="error-message">
+          <p *ngIf="validPhone.errors?.['pattern']">מספר פלאפון לא תקין</p>
+          <p *ngIf="validPhone.errors?.['required']">שדה חובה</p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input type="Date" class="form-control" id="dateBirth" placeholder="תאריך לידה" name="dateBirth" 
+               [(ngModel)]="newUser.dateBirth" #validDateBirth="ngModel">
+      </div>
+
+      <button type="submit" [disabled]="!myForm.valid" class="register-button">הירשם</button>
+    </form>
+  </div>
+</div>

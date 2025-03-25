@@ -1,0 +1,159 @@
+/* הגדרת עיצוב כללי לגלריה */
+.robot-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 10px;
+  animation: fadeIn 1s ease-in-out;
+  box-shadow: 0 4px 15px rgba(0, 255, 204, 0.2);
+}
+
+/* כותרת הגלריה */
+.gallery-title {
+  font-size: 2.5rem;
+  color: #00ffcc;
+  margin-bottom: 20px;
+  animation: slideIn 1s forwards;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* תיאור כללי לפני כרטיסים */
+.intro-text {
+  color: #ffffff;
+  font-size: 2rem;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  margin-top: 30px;
+  font-weight: 800;
+}
+
+/* עיצוב סינונים */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* מאפשר להתפשט לשורות אם צריך */
+  width: 100%; /* תופס את כל רוחב האלמנט */
+}
+
+/* עיצוב כפתורי הסינון */
+.robot-option {
+  background-color:white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px;
+  width: 180px; /* רוחב קבוע לכפתורים */
+  text-align: center;
+  font-weight: bold;
+  color: #1e1e1e;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-size: 1.1rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.robot-option:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 255, 204, 0.6);
+}
+
+/* הגדרת עיצוב כרטיסי הרובוט */
+.robot-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.robot-card {
+  background-color: #2b2b2b;
+  border: 2px solid #00ffcc;
+  border-radius: 15px;
+  padding: 15px;
+  width: 180px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: popIn 0.5s forwards;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* אפקט ריחוף על כרטיס רובוט */
+.robot-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 255, 204, 0.6);
+}
+
+/* כותרת ותיאור של הרובוט */
+.robot-- {
+  color: aliceblue;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+/* תיאור המחיר */
+.robot-card p {
+  font-size: 1.2rem;
+  color: #ffcc00;
+  font-weight: bold;
+}
+
+/* התמונה */
+.robot-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.robot-card img:hover {
+  transform: scale(1.1);
+}
+
+/* טקסט תחתון */
+.footer-text {
+  color: #cccccc;
+  font-size: 2rem;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  margin-top: 30px;
+  font-weight: 800;
+}
+
+/* אפקטים אנימציה */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

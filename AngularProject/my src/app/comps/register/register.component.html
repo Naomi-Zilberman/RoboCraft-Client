@@ -1,0 +1,28 @@
+
+<div class="container mt-3">
+    <form class="was-validated" #myForm="ngForm" (ngSubmit)="ok()">
+      
+        <div class="mb-3">
+            <input type="string" class="form-control" id="phone" placeholder="הכנס מספר טלפון" name="phone" 
+                [(ngModel)]="newUser.phone" #validPhone="ngModel"                 required pattern="^05[0-9]{8}$">
+ 
+                required>
+             @if(validPhone.invalid &&(validPhone.touched || validPhone.dirty))
+                {
+                    <p [hidden]="!validPhone.errors?.['pattern']">מספר פלאפון לא תקין</p>
+                    <p [hidden]="!validPhone.errors!['required']">שדה חובה</p>}
+        </div>
+
+        <div class="mb-3">
+            <input type="Date" class="form-control" id="dateBirth"
+                   placeholder="הכנס תאריך לידה" name="dateBirth" 
+                   [(ngModel)]="newUser.dateBirth" #validDateBirth="ngModel" 
+                   >
+           
+            
+        </div>
+        
+        <input type="submit" [disabled]="!myForm.valid"><br>
+    </form>
+</div>
+

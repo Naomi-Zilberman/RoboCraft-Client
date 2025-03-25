@@ -1,0 +1,94 @@
+/* ייבוא פונט מ-Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* עיצוב כללי לניווט */
+.navbar {
+  font-family:'David';
+  font-size: 2.1rem;
+  letter-spacing: 1px; /* רווח בין אותיות */
+  padding: 10px 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* עיצוב השורה */
+.shura {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #2c2b2b;
+  padding: 15px 0;
+  border-radius: 15px; /* קימור יותר מודרני */
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* עיצוב הכפתורים */
+.robot-option {
+  border: none;
+  background: none;
+  padding: 12px 25px; /* הגדלת הגודל כדי שיראה יותר נעים */
+  font-size: 1.2rem; /* גודל יותר בולט */
+  color: #ffffff;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-radius: 25px; /* קימור לפינות */
+}
+
+/* עיצוב הקישורים */
+.robot-option a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600; /* הדגשה של הכיתוב */
+}
+
+/* אפקט מעבר על כפתור */
+.robot-option:hover {
+  position: relative;
+  color: #00d4ff; /* צבע כחול-תכלת */
+  background-color: rgba(0, 212, 255, 0.1); /* רקע בהיר כאשר שוהה על הכפתור */
+}
+
+.robot-option:hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #00d4ff, rgba(0, 212, 255, 0));
+  border-radius: 15px;
+  z-index: -1;
+  animation: slide-down 0.3s ease forwards;
+}
+
+/* כפתור פעיל */
+.robot-option.active-link {
+  color: #00ffa3; /* צבע ירוק זוהר */
+  background-color: #0e0e0e; /* רקע כהה */
+  font-weight: 600; /* הדגשה של הכפתור הפעיל */
+  text-decoration: underline;
+  padding: 12px 25px;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  border-radius: 25px;
+}
+
+/* אנימציה של מעבר */
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* עיצוב כפתור דף הבית הנוכחי */
+.robot-option a[routerLink=""] {
+  color: #00ffa3;
+  text-decoration: underline;
+}
